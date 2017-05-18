@@ -21,8 +21,13 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         chatHistoryTableView.delegate = self
         chatHistoryTableView.rowHeight = UITableViewAutomaticDimension
         chatHistoryTableView.estimatedRowHeight = 96.0
-
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.navigationItem.title = "Ora Chat"
+    }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

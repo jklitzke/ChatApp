@@ -12,12 +12,14 @@ class AccountTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         //TODO: Add save button action and API call!
         self.tabBarController?.navigationItem.title = "Account"
-        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
- 
-    }
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -97,7 +97,7 @@
                             <outlet property="delegate" destination="bDk-eg-hw0" id="8AK-6d-Vzg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="hYy-XY-I0F">
+                    <navigationItem key="navigationItem" title="OraChat" id="hYy-XY-I0F">
                         <barButtonItem key="leftBarButtonItem" title="Register" id="krh-Wj-Xq5">
                             <connections>
                                 <segue destination="JdY-aV-MjY" kind="show" id="a49-Y7-c45"/>
@@ -280,7 +280,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Register" id="D6c-QS-RYN">
+                    <navigationItem key="navigationItem" title="OraChat" id="D6c-QS-RYN">
                         <barButtonItem key="backBarButtonItem" title="Login" id="IDg-ka-T6N"/>
                         <barButtonItem key="leftBarButtonItem" title="Login" id="QbV-4o-M0u">
                             <connections>

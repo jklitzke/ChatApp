@@ -176,9 +176,6 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Account" image="accountIconUnselected" id="1b9-Oi-SkP"/>
-                    <navigationItem key="navigationItem" title="Account" id="eA2-Ph-wKH">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="kdP-kU-dGc"/>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Slg-uY-7zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuv-H5-vhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.60000000000002" y="-1705.097451274363"/>
+            <point key="canvasLocation" x="278" y="-1773"/>
         </scene>
         <!--Chat Table View Controller-->
         <scene sceneID="k4s-YS-7vg">
@@ -374,7 +371,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9v-Oe-A3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1551" y="-1411"/>
+            <point key="canvasLocation" x="-1364" y="-1413"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sP4-Nl-msF">
