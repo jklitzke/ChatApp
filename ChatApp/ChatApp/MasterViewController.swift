@@ -21,14 +21,9 @@ class MasterViewController: UITableViewController {
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
 
@@ -51,7 +46,6 @@ class MasterViewController: UITableViewController {
                 let object = objects[indexPath.row] as! NSDate
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
