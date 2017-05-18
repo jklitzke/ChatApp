@@ -215,10 +215,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5A-Nk-F0V">
-                                                    <rect key="frame" x="102" y="6" width="265" height="30"/>
+                                                    <rect key="frame" x="102" y="7" width="265" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="6Po-6I-Kyt"/>
-                                                        <constraint firstAttribute="width" constant="265" id="Jqm-w9-yxF"/>
+                                                        <constraint firstAttribute="height" constant="30" id="znR-8Z-Khh"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -226,11 +225,10 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="tql-AT-uc7" firstAttribute="centerY" secondItem="P5A-Nk-F0V" secondAttribute="centerY" id="2SC-rE-jg9"/>
+                                                <constraint firstItem="P5A-Nk-F0V" firstAttribute="leading" secondItem="tql-AT-uc7" secondAttribute="trailing" constant="12" id="301-wR-GB7"/>
                                                 <constraint firstItem="tql-AT-uc7" firstAttribute="top" secondItem="J8S-XT-dMa" secondAttribute="topMargin" constant="3" id="EaM-BZ-SqF"/>
-                                                <constraint firstItem="P5A-Nk-F0V" firstAttribute="leading" secondItem="tql-AT-uc7" secondAttribute="trailing" constant="12" id="Hy4-dO-8qx"/>
-                                                <constraint firstAttribute="trailing" secondItem="P5A-Nk-F0V" secondAttribute="trailing" constant="8" id="n20-Wl-3go"/>
-                                                <constraint firstItem="P5A-Nk-F0V" firstAttribute="top" secondItem="J8S-XT-dMa" secondAttribute="top" constant="6" id="oKY-de-SK0"/>
+                                                <constraint firstAttribute="trailing" secondItem="P5A-Nk-F0V" secondAttribute="trailing" constant="8" id="SFR-Hp-Suf"/>
+                                                <constraint firstItem="P5A-Nk-F0V" firstAttribute="top" secondItem="J8S-XT-dMa" secondAttribute="top" constant="7" id="v4c-Wp-pYt"/>
                                                 <constraint firstItem="tql-AT-uc7" firstAttribute="leading" secondItem="J8S-XT-dMa" secondAttribute="leadingMargin" constant="8" id="vfC-yG-AYZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -297,7 +295,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vb-FH-ymi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="-1227"/>
+            <point key="canvasLocation" x="1772" y="-1227.4362818590705"/>
         </scene>
     </scenes>
 </document>
