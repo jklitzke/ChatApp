@@ -14,6 +14,8 @@ class LoginTableViewController : UITableViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
+        OraChatAPI.sharedInstance.login(email: "hi@gmail.com", password: "passwrod")
+        
         guard let initialViewControler = chatStoryBoard.instantiateInitialViewController() else {
             return
         }
