@@ -25,7 +25,7 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.navigationItem.title = "Ora Chat"
+        tabBarController?.navigationItem.title = "OraChat"
     }
 
 
