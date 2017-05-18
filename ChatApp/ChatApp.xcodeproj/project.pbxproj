@@ -18,6 +18,7 @@
 		96A7810E1ECD294400FF2821 /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7810D1ECD294400FF2821 /* RegisterTableViewController.swift */; };
 		96A781101ECD2C3C00FF2821 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7810F1ECD2C3C00FF2821 /* ChatTableViewController.swift */; };
 		96A781121ECD2C5600FF2821 /* ChatHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A781111ECD2C5600FF2821 /* ChatHistoryViewController.swift */; };
+		96A781141ECD37FB00FF2821 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A781131ECD37FB00FF2821 /* AccountTableViewController.swift */; };
 		C9C1ACF320FCFF6CFA048FE6 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B281FB1D7DF40A7F4355130 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		96A7810D1ECD294400FF2821 /* RegisterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
 		96A7810F1ECD2C3C00FF2821 /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		96A781111ECD2C5600FF2821 /* ChatHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatHistoryViewController.swift; sourceTree = "<group>"; };
+		96A781131ECD37FB00FF2821 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		9B281FB1D7DF40A7F4355130 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41953ED13F2EFD2D32197CE /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		D718AF5CD6B22E1961603467 /* Pods-ChatAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppTests/Pods-ChatAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				96A7810D1ECD294400FF2821 /* RegisterTableViewController.swift */,
 				96A7810F1ECD2C3C00FF2821 /* ChatTableViewController.swift */,
 				96A781111ECD2C5600FF2821 /* ChatHistoryViewController.swift */,
+				96A781131ECD37FB00FF2821 /* AccountTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			files = (
 				96A781121ECD2C5600FF2821 /* ChatHistoryViewController.swift in Sources */,
 				96939CF11ECCEAB6004A42F9 /* AppDelegate.swift in Sources */,
+				96A781141ECD37FB00FF2821 /* AccountTableViewController.swift in Sources */,
 				96A7810E1ECD294400FF2821 /* RegisterTableViewController.swift in Sources */,
 				96A7810C1ECD290A00FF2821 /* LoginTableViewController.swift in Sources */,
 				96A781101ECD2C3C00FF2821 /* ChatTableViewController.swift in Sources */,

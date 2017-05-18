@@ -46,17 +46,6 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
@@ -71,5 +60,4 @@ class ChatHistoryTableViewCell : UITableViewCell {
         lastChatSummaryLabel.text = "James - 1 hour ago"
         lastChatMessageLabel.text = "Wassup!"
     }
-    
 }

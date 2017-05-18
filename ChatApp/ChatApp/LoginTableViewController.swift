@@ -6,7 +6,6 @@
 //  Copyright © 2017 James Klitzke. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class LoginTableViewController : UITableViewController {
@@ -19,6 +18,6 @@ class LoginTableViewController : UITableViewController {
             return
         }
         
-        navigationController?.pushViewController(initialViewControler, animated: true)
+        navigationController?.present(initialViewControler, animated: true)
     }
 }
