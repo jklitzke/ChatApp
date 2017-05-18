@@ -33,7 +33,7 @@
                             <outlet property="delegate" destination="EFb-fY-jaa" id="scv-wi-3uS"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Account" id="89R-dm-rPB"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="accontIconSelected" id="89R-dm-rPB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Slg-uY-7zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,7 +103,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chat" id="5JY-vc-RnR"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="chatIconSelected" id="5JY-vc-RnR"/>
                     <connections>
                         <outlet property="chatHistoryTableView" destination="f0x-Hd-Tug" id="2ll-8S-Gsm"/>
                         <outlet property="searchBar" destination="uFJ-ii-Mlw" id="Pgj-NB-DPM"/>
@@ -122,15 +122,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myChatMessageTableViewCell" rowHeight="70" id="qad-Z0-Izd" customClass="MyChatMessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myChatMessageTableViewCell" rowHeight="80" id="qad-Z0-Izd" customClass="MyChatMessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qad-Z0-Izd" id="1ji-3h-Jnr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyFriendChatMessageBubble" translatesAutoresizingMaskIntoConstraints="NO" id="TIQ-De-MxB">
+                                            <rect key="frame" x="11" y="6" width="226" height="50"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh Hey!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7z-ne-yJF">
-                                            <rect key="frame" x="19" y="17" width="348" height="21"/>
+                                            <rect key="frame" x="19" y="24" width="207" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="iQp-gd-xlQ"/>
                                             </constraints>
@@ -139,7 +142,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dan - 23 Min ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpl-6F-AQk">
-                                            <rect key="frame" x="28" y="47" width="339" height="21"/>
+                                            <rect key="frame" x="11" y="57" width="339" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="ie3-Fp-TOq"/>
                                             </constraints>
@@ -149,24 +152,29 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="b7z-ne-yJF" firstAttribute="trailing" secondItem="1ji-3h-Jnr" secondAttribute="trailingMargin" id="5WZ-Oh-zt9"/>
+                                        <constraint firstItem="b7z-ne-yJF" firstAttribute="trailing" secondItem="1ji-3h-Jnr" secondAttribute="trailingMargin" constant="-141" id="5WZ-Oh-zt9"/>
                                         <constraint firstAttribute="bottom" secondItem="jpl-6F-AQk" secondAttribute="bottom" constant="1.5" id="9rN-Hb-LSX"/>
-                                        <constraint firstItem="b7z-ne-yJF" firstAttribute="top" secondItem="1ji-3h-Jnr" secondAttribute="topMargin" constant="9" id="KaH-Fb-UGK"/>
-                                        <constraint firstItem="jpl-6F-AQk" firstAttribute="leading" secondItem="1ji-3h-Jnr" secondAttribute="leading" constant="28" id="Ptu-7S-d36"/>
+                                        <constraint firstItem="b7z-ne-yJF" firstAttribute="top" secondItem="1ji-3h-Jnr" secondAttribute="topMargin" constant="16" id="KaH-Fb-UGK"/>
+                                        <constraint firstItem="jpl-6F-AQk" firstAttribute="leading" secondItem="1ji-3h-Jnr" secondAttribute="leading" constant="11" id="Ptu-7S-d36"/>
+                                        <constraint firstItem="jpl-6F-AQk" firstAttribute="top" secondItem="TIQ-De-MxB" secondAttribute="bottom" constant="1" id="U4v-Gx-fbe"/>
                                         <constraint firstItem="b7z-ne-yJF" firstAttribute="leading" secondItem="1ji-3h-Jnr" secondAttribute="leadingMargin" constant="11" id="WOO-R7-fPl"/>
-                                        <constraint firstAttribute="trailing" secondItem="jpl-6F-AQk" secondAttribute="trailing" constant="8" id="taO-jy-hjs"/>
+                                        <constraint firstItem="TIQ-De-MxB" firstAttribute="leading" secondItem="jpl-6F-AQk" secondAttribute="leading" id="dcg-yK-d4F"/>
+                                        <constraint firstAttribute="trailing" secondItem="jpl-6F-AQk" secondAttribute="trailing" constant="25" id="taO-jy-hjs"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myFriendChatMessageTableViewCell" rowHeight="70" id="pI0-1h-KnE" customClass="MyFriendChatMessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="98" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myFriendChatMessageTableViewCell" rowHeight="80" id="pI0-1h-KnE" customClass="MyFriendChatMessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="108" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pI0-1h-KnE" id="AG7-1A-Xhi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyChatMessageBubble" translatesAutoresizingMaskIntoConstraints="NO" id="FiJ-gG-CEY">
+                                            <rect key="frame" x="141" y="6" width="226" height="50"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dan - 23 Min ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLq-0N-IRp">
-                                            <rect key="frame" x="8" y="41" width="359" height="21"/>
+                                            <rect key="frame" x="8" y="60" width="359" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="zes-53-hL1"/>
                                             </constraints>
@@ -175,7 +183,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh Hey!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gm-N2-LpL">
-                                            <rect key="frame" x="19" y="17" width="348" height="21"/>
+                                            <rect key="frame" x="154" y="18" width="196" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="X26-Nn-f8f"/>
                                             </constraints>
@@ -186,11 +194,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kLq-0N-IRp" firstAttribute="leading" secondItem="AG7-1A-Xhi" secondAttribute="leading" constant="8" id="0St-Yv-5ls"/>
-                                        <constraint firstItem="0gm-N2-LpL" firstAttribute="trailing" secondItem="AG7-1A-Xhi" secondAttribute="trailingMargin" id="8aU-rz-J4l"/>
-                                        <constraint firstAttribute="bottom" secondItem="kLq-0N-IRp" secondAttribute="bottom" constant="7.5" id="LGN-NA-AcS"/>
-                                        <constraint firstItem="0gm-N2-LpL" firstAttribute="top" secondItem="AG7-1A-Xhi" secondAttribute="topMargin" constant="9" id="Ywn-YS-bVQ"/>
+                                        <constraint firstItem="0gm-N2-LpL" firstAttribute="trailing" secondItem="AG7-1A-Xhi" secondAttribute="trailingMargin" constant="-17" id="8aU-rz-J4l"/>
+                                        <constraint firstAttribute="bottom" secondItem="kLq-0N-IRp" secondAttribute="bottom" constant="-1.5" id="LGN-NA-AcS"/>
+                                        <constraint firstItem="kLq-0N-IRp" firstAttribute="top" secondItem="FiJ-gG-CEY" secondAttribute="bottom" constant="4" id="NIm-IO-Ey0"/>
+                                        <constraint firstItem="FiJ-gG-CEY" firstAttribute="trailing" secondItem="kLq-0N-IRp" secondAttribute="trailing" id="Yun-8a-hD0"/>
+                                        <constraint firstItem="0gm-N2-LpL" firstAttribute="top" secondItem="AG7-1A-Xhi" secondAttribute="topMargin" constant="10" id="Ywn-YS-bVQ"/>
                                         <constraint firstAttribute="trailing" secondItem="kLq-0N-IRp" secondAttribute="trailing" constant="8" id="qp0-ES-adB"/>
-                                        <constraint firstItem="0gm-N2-LpL" firstAttribute="leading" secondItem="AG7-1A-Xhi" secondAttribute="leadingMargin" constant="11" id="uEI-DJ-H08"/>
+                                        <constraint firstItem="0gm-N2-LpL" firstAttribute="leading" secondItem="AG7-1A-Xhi" secondAttribute="leadingMargin" constant="146" id="uEI-DJ-H08"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -252,4 +262,10 @@
             <point key="canvasLocation" x="1515" y="-977"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MyChatMessageBubble" width="226" height="50"/>
+        <image name="MyFriendChatMessageBubble" width="226" height="50"/>
+        <image name="accontIconSelected" width="22" height="22"/>
+        <image name="chatIconSelected" width="20" height="14"/>
+    </resources>
 </document>
