@@ -72,6 +72,8 @@ class OraChatAPI {
         }
     }
     
+    func postChat(name : String, message : String, )
+    
     func getChatHistory(success: @escaping ChatHistorySuccess, failure : @escaping ApiFailure) {
         let url = baseURL + chatsOp + "?page=1&limit=50"
         
