@@ -51,6 +51,7 @@ class ChatHistoryViewModel {
         let name = chatSummary.last_chat_message?.user?.name ?? ""
         return "\(name) - \(date)"
     }
+    
     func dataTextForChat(_ section : Int) -> String {
         return String(describing: chatHistory[section].last_chat_message?.created_at)
     }

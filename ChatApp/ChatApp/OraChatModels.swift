@@ -22,7 +22,6 @@ class LoginResponse : Mappable {
         data <- map["data"]
         meta <- map["meta"]
     }
-    
 }
 
 class ChatHistoryResponse : Mappable {

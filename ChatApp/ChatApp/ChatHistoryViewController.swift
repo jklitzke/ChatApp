@@ -77,7 +77,6 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
 
 
 class ChatHistoryTableViewCell : UITableViewCell {
-    
     @IBOutlet weak var chatByLabel: UILabel!
     @IBOutlet weak var lastChatSummaryLabel: UILabel!
     @IBOutlet weak var lastChatMessageLabel: UILabel!

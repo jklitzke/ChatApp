@@ -16,7 +16,6 @@ class LoggedInUserViewModel {
     var loggedInUser : User?
     lazy var oraChatApi = OraChatAPI.sharedInstance
     
-    
     var email : String {
         return loggedInUser?.email ?? ""
     }

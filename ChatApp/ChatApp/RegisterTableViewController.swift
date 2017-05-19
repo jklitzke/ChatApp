@@ -23,5 +23,4 @@ class RegisterTableViewController: UITableViewController {
         //TODO: Add code to call register API
         navigationController?.popToRootViewController(animated: true)
     }
-    
 }

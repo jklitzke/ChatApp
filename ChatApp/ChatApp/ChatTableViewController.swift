@@ -62,7 +62,4 @@ class MessageTableViewCell : UITableViewCell {
         messageLabel.text = viewModel.textForMessage(index)
         messageDetailLabel.text = viewModel.detailTextForMessage(index)
     }
-    
 }
-
-

@@ -55,5 +55,4 @@ class ChatMessagesViewModel {
     func detailTextForMessage(_ index : Int) -> String {
         return chatMessages[index].user?.name ?? ""
     }
-    
 }

@@ -18,11 +18,6 @@ class AccountTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         //TODO: Add save button action and API call!
         self.tabBarController?.navigationItem.title = "Account"
-        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
     }
 }
