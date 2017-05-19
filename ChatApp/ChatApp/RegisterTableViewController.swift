@@ -19,11 +19,6 @@ class RegisterTableViewController: UITableViewController {
 
     lazy var viewModel = CreateUserViewModel()
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func loginButtonTapped(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
