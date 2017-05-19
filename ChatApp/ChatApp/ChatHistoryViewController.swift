@@ -27,16 +27,8 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         viewModel.getChatHistory(success: {
             self.chatHistoryTableView.reloadData()
         }, failure: {
-        
+            self.showGenericErorrMessage()
         })
-//        
-//        api.getChatHistory(success: {
-//            chatHistory in
-//            print("SUCCESS!")
-//        }, failure: {
-//            error in 
-//            print("FAILURE!")
-//        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,13 +36,16 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         tabBarController?.navigationItem.title = "OraChat"
     }
 
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return viewModel.numberOfChats
+    }
+        
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.dataTextForChat(section)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,11 +53,11 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = chatHistoryTableView.dequeueReusableCell(withIdentifier: reuseID)!
         
         if let chatCell = cell as? ChatHistoryTableViewCell {
-            chatCell.configure()
+
+            chatCell.configureFor(viewModel: viewModel, indexPath: indexPath)
         }
         
         return cell
@@ -76,9 +71,9 @@ class ChatHistoryTableViewCell : UITableViewCell {
     @IBOutlet weak var lastChatSummaryLabel: UILabel!
     @IBOutlet weak var lastChatMessageLabel: UILabel!
     
-    func configure() {
-        chatByLabel.text = "A Chat By James!"
-        lastChatSummaryLabel.text = "James - 1 hour ago"
-        lastChatMessageLabel.text = "Wassup!"
+    func configureFor(viewModel : ChatHistoryViewModel, indexPath: IndexPath) {
+        chatByLabel.text = viewModel.chatByTextForChat(indexPath.section)
+        lastChatSummaryLabel.text = viewModel.lastChatSummaryTextForChat(indexPath.section)
+        lastChatMessageLabel.text = viewModel.lastChatMessageTextForChat(indexPath.section)
     }
 }

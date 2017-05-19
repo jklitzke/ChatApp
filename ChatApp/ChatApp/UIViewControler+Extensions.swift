@@ -13,4 +13,8 @@ extension UIViewController {
         let alert = UIAlertController.genericAlert(title: title, message: message)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showGenericErorrMessage() {
+        self.showAlertWithTitle("Service Error", message: "We're sorry something went wrong with this request. Please try again.")
+    }
 }

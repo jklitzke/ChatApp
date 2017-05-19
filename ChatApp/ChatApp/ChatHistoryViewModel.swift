@@ -29,6 +29,25 @@ class ChatHistoryViewModel {
     var numberOfChats : Int {
         return chatHistory.count
     }
+ 
+    func lastChatMessageTextForChat(_ section : Int) -> String {
+        return chatHistory[section].last_chat_message?.message ?? ""
+    }
     
+    func chatByTextForChat(_ section : Int) -> String {
+        let chatSummary = chatHistory[section]
+        let chatName = chatSummary.name ?? "Generic Chat"
+        let person = chatSummary.last_chat_message?.user?.name ?? ""
+        return "\(chatName) by \(person)"
+    }
     
+    func lastChatSummaryTextForChat(_ section : Int) -> String {
+        let chatSummary = chatHistory[section]
+        let date = chatSummary.last_chat_message?.created_at ?? ""
+        let name = chatSummary.last_chat_message?.user?.name ?? ""
+        return "\(name) - \(date)"
+    }
+    func dataTextForChat(_ section : Int) -> String {
+        return String(describing: chatHistory[section].last_chat_message?.created_at)
+    }
 }
