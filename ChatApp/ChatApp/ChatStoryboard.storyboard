@@ -272,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myChatMessageTableViewCell" rowHeight="80" id="qad-Z0-Izd" customClass="MyChatMessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myChatMessageTableViewCell" rowHeight="80" id="qad-Z0-Izd" customClass="MessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qad-Z0-Izd" id="1ji-3h-Jnr">
@@ -312,8 +312,12 @@
                                         <constraint firstAttribute="trailing" secondItem="jpl-6F-AQk" secondAttribute="trailing" constant="25" id="taO-jy-hjs"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageDetailLabel" destination="jpl-6F-AQk" id="EWd-9k-Qgb"/>
+                                    <outlet property="messageLabel" destination="b7z-ne-yJF" id="fjI-NU-XNE"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myFriendChatMessageTableViewCell" rowHeight="80" id="pI0-1h-KnE" customClass="MyFriendChatMessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myFriendChatMessageTableViewCell" rowHeight="80" id="pI0-1h-KnE" customClass="MessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pI0-1h-KnE" id="AG7-1A-Xhi">
@@ -353,6 +357,10 @@
                                         <constraint firstItem="0gm-N2-LpL" firstAttribute="leading" secondItem="AG7-1A-Xhi" secondAttribute="leadingMargin" constant="146" id="uEI-DJ-H08"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageDetailLabel" destination="kLq-0N-IRp" id="Fmd-1S-nbL"/>
+                                    <outlet property="messageLabel" destination="0gm-N2-LpL" id="Oxx-OX-pkG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -42,6 +42,7 @@ class OraChatAPI {
                 switch response.result {
                 case .success:
                     let loginResponse = response.result.value!.data!
+                    self.currentLoggedInUser = loginResponse
                     success(loginResponse)
                 case .failure(let error):
                     failure(error)

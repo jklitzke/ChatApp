@@ -15,9 +15,11 @@ class ChatMessagesViewModel {
     var chatMessages = [ChatMessage]()
     var chatId : Int?
     lazy var oraChatApi = OraChatAPI.sharedInstance
+    var currentLoggedInUser : User?
     
     init(id : Int? ) {
         chatId = id
+        currentLoggedInUser = oraChatApi.currentLoggedInUser
     }
     
     func getChatMessages(success : @escaping GetChatMessagesSuccess, failure: @escaping GetChatMessagesFailure ) {
@@ -35,4 +37,23 @@ class ChatMessagesViewModel {
             failure()
         })
     }
+    
+    var numberOfChatMessages : Int {
+        return chatMessages.count
+    }
+    
+    func isLoggedInUsersMessage(_ index : Int) -> Bool {
+        let message = chatMessages[index]
+        
+        return message.user_id == currentLoggedInUser?.userID
+    }
+    
+    func textForMessage(_ index : Int) -> String {
+        return chatMessages[index].message ?? ""
+    }
+    
+    func detailTextForMessage(_ index : Int) -> String {
+        return chatMessages[index].user?.name ?? ""
+    }
+    
 }

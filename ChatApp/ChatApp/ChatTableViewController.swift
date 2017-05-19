@@ -35,7 +35,7 @@ class ChatTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel.numberOfChatMessages
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,18 +43,26 @@ class ChatTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reuseID = (indexPath.row % 2 == 0) ? myFriendChatMessageReuseID : myChatMessageReuseID
+        let reuseID = viewModel.isLoggedInUsersMessage(indexPath.row) ? myFriendChatMessageReuseID : myChatMessageReuseID
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath)
 
+        if let messageCell = cell as? MessageTableViewCell {
+            messageCell.configure(viewModel: viewModel, index: indexPath.row)
+        }
+        
         return cell
     }
 }
 
-class MyChatMessageTableViewCell : UITableViewCell {
+class MessageTableViewCell : UITableViewCell {
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageDetailLabel: UILabel!
+    
+    func configure(viewModel : ChatMessagesViewModel, index : Int) {
+        messageLabel.text = viewModel.textForMessage(index)
+        messageDetailLabel.text = viewModel.detailTextForMessage(index)
+    }
     
 }
 
-class MyFriendChatMessageTableViewCell : UITableViewCell {
-    
-}
- 
+
