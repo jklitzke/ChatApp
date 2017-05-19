@@ -22,6 +22,7 @@ class OraChatAPI {
     typealias LoginUserSuccess = (_ user : User) -> Void
     typealias CreateUserSuccess = (_ user : User) -> Void
     typealias ChatHistorySuccess = (_ chatSummaries : [ChatSummary]) -> Void
+    typealias ChatMessagesSuccess = (_ chatMessages : [ChatMessage]) -> Void
     typealias ApiFailure = (_ error : Error) -> Void
     
     
@@ -84,6 +85,24 @@ class OraChatAPI {
                 case .success:
                     let chatHistoryResponse = response.result.value!.data!
                     success(chatHistoryResponse)
+                case .failure(let error):
+                    print(error)
+                    failure(error)
+                }
+        }
+    }
+    
+    func getChatMessages(id : Int, success : @escaping ChatMessagesSuccess, failure : @escaping ApiFailure) {
+        let url = baseURL + chatsOp + "/\(id)/chat_messages"
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+            .validate()
+            .responseObject {
+                (response : DataResponse<ChatMessagesResponse>) in
+                
+                switch response.result {
+                case .success:
+                    let chatMessages = response.result.value!.data!
+                    success(chatMessages)
                 case .failure(let error):
                     print(error)
                     failure(error)

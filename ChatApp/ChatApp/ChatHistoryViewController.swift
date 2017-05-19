@@ -14,6 +14,7 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var chatHistoryTableView: UITableView!
     
     let reuseID = "chatHistoryTableViewCell"
+    let getChatMessagesSegue = "getChatMessages"
 
     lazy var viewModel = ChatHistoryViewModel()
     
@@ -61,6 +62,16 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == getChatMessagesSegue {
+            if let viewController = segue.destination as? ChatTableViewController,
+               let indexPath = self.chatHistoryTableView.indexPathForSelectedRow {
+                let selectedChatId = self.viewModel.chatIdForChat(indexPath.section)
+                viewController.viewModel = ChatMessagesViewModel(id : selectedChatId)
+            }
+        }
     }
 }
 

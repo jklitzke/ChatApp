@@ -236,7 +236,7 @@
                                             <outlet property="chatByLabel" destination="Gkd-0Y-6fz" id="YiT-b1-0JA"/>
                                             <outlet property="lastChatMessageLabel" destination="uUX-Nm-gqB" id="xHy-gS-CKK"/>
                                             <outlet property="lastChatSummaryLabel" destination="B2N-t0-eHc" id="nYz-dS-KQQ"/>
-                                            <segue destination="IXn-8d-if6" kind="show" id="Mt3-5y-g6O"/>
+                                            <segue destination="IXn-8d-if6" kind="show" identifier="getChatMessages" id="Mt3-5y-g6O"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

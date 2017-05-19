@@ -13,22 +13,22 @@ class ChatTableViewController: UITableViewController {
     let myChatMessageReuseID = "myChatMessageTableViewCell"
     let myFriendChatMessageReuseID = "myFriendChatMessageTableViewCell"
     
+    var viewModel : ChatMessagesViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        viewModel.getChatMessages(success: {
+            self.tableView.reloadData()
+        }, failure: {
+            self.showGenericErorrMessage()
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.navigationItem.title = "A Chat"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -43,9 +43,7 @@ class ChatTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let reuseID = (indexPath.row % 2 == 0) ? myFriendChatMessageReuseID : myChatMessageReuseID
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath)
 
         return cell

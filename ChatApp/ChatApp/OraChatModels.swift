@@ -39,11 +39,25 @@ class ChatHistoryResponse : Mappable {
     }
 }
 
+class ChatMessagesResponse : Mappable {
+    var data : [ChatMessage]?
+    var meta : Any?
+    
+    required init?(map : Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        data <- map["data"]
+        meta <- map["meta"]
+    }
+}
+
 class ChatSummary : Mappable {
     var chatId : Int?
     var name : String?
     var users : [User]?
-    var last_chat_message : LastChatMessage?
+    var last_chat_message : ChatMessage?
     
     required init?(map : Map) {
         
@@ -58,7 +72,6 @@ class ChatSummary : Mappable {
 }
 
 class User : Mappable {
-
     var userID : Int?
     var email : String?
     var name : String?
@@ -72,12 +85,12 @@ class User : Mappable {
         name <- map["name"]
         email <- map["email"]
     }
-
 }
 
-class LastChatMessage : Mappable {
+class ChatMessage : Mappable {
     var id : Int?
-    var chat_id : String?
+    var chat_id : Int?
+    var user_id : Int?
     var message : String?
     var created_at : String?
     var user : User?
@@ -89,9 +102,9 @@ class LastChatMessage : Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         chat_id <- map["chat_id"]
+        user_id <- map["user_id"]
         message <- map["message"]
         created_at <- map["created_at"]
         user <- map["user"]
-
     }
 }

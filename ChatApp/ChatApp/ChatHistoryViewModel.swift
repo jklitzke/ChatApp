@@ -30,6 +30,10 @@ class ChatHistoryViewModel {
         return chatHistory.count
     }
  
+    func chatIdForChat(_ section : Int) -> Int? {
+        return chatHistory[section].chatId
+    }
+    
     func lastChatMessageTextForChat(_ section : Int) -> String {
         return chatHistory[section].last_chat_message?.message ?? ""
     }
