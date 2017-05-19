@@ -14,6 +14,8 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var chatHistoryTableView: UITableView!
     
     let reuseID = "chatHistoryTableViewCell"
+    let api = OraChatAPI.sharedInstance
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,14 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         chatHistoryTableView.delegate = self
         chatHistoryTableView.rowHeight = UITableViewAutomaticDimension
         chatHistoryTableView.estimatedRowHeight = 96.0
+        
+        api.getChatHistory(success: {
+            chatHistory in
+            print("SUCCESS!")
+        }, failure: {
+            error in 
+            print("FAILURE!")
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
