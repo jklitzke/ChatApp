@@ -48,12 +48,5 @@ class LoginTableViewController : UITableViewController {
     
     func loginServiceFailedAlert() {
         self.showAlertWithTitle("Could Not Login", message: "Invalid user name and/or password")
-    }
-    
-    func showAlertWithTitle(_ title : String, message : String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(defaultAction)
-        self.present(alert, animated: true, completion: nil)
-    }
+    }    
 }

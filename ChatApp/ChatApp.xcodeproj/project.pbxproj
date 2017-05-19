@@ -12,6 +12,9 @@
 		960AAA191ECD584700DC5F50 /* OraChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA181ECD584700DC5F50 /* OraChatAPI.swift */; };
 		960AAA1D1ECE13BC00DC5F50 /* LoggedInUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA1C1ECE13BC00DC5F50 /* LoggedInUserViewModel.swift */; };
 		960AAA1F1ECE345A00DC5F50 /* OraChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA1E1ECE345A00DC5F50 /* OraChatModels.swift */; };
+		960AAA231ECE796F00DC5F50 /* ChatHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA221ECE796F00DC5F50 /* ChatHistoryViewModel.swift */; };
+		960AAA251ECE8FAA00DC5F50 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA241ECE8FAA00DC5F50 /* UIAlertController+Extensions.swift */; };
+		960AAA271ECE904C00DC5F50 /* UIViewControler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA261ECE904C00DC5F50 /* UIViewControler+Extensions.swift */; };
 		96939CF11ECCEAB6004A42F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96939CF01ECCEAB6004A42F9 /* AppDelegate.swift */; };
 		96939CF81ECCEAB6004A42F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96939CF61ECCEAB6004A42F9 /* Main.storyboard */; };
 		96939CFA1ECCEAB6004A42F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96939CF91ECCEAB6004A42F9 /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 		960AAA181ECD584700DC5F50 /* OraChatAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OraChatAPI.swift; sourceTree = "<group>"; };
 		960AAA1C1ECE13BC00DC5F50 /* LoggedInUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInUserViewModel.swift; sourceTree = "<group>"; };
 		960AAA1E1ECE345A00DC5F50 /* OraChatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OraChatModels.swift; sourceTree = "<group>"; };
+		960AAA221ECE796F00DC5F50 /* ChatHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatHistoryViewModel.swift; sourceTree = "<group>"; };
+		960AAA241ECE8FAA00DC5F50 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		960AAA261ECE904C00DC5F50 /* UIViewControler+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControler+Extensions.swift"; sourceTree = "<group>"; };
 		96939CED1ECCEAB6004A42F9 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96939CF01ECCEAB6004A42F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96939CF71ECCEAB6004A42F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				960AAA141ECD54EA00DC5F50 /* UIColor+Extensions.swift */,
+				960AAA241ECE8FAA00DC5F50 /* UIAlertController+Extensions.swift */,
+				960AAA261ECE904C00DC5F50 /* UIViewControler+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 		96A7810A1ECD28F100FF2821 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				960AAA221ECE796F00DC5F50 /* ChatHistoryViewModel.swift */,
 				960AAA1C1ECE13BC00DC5F50 /* LoggedInUserViewModel.swift */,
 			);
 			name = ViewModels;
@@ -408,6 +417,7 @@
 			files = (
 				96A781121ECD2C5600FF2821 /* ChatHistoryViewController.swift in Sources */,
 				96939CF11ECCEAB6004A42F9 /* AppDelegate.swift in Sources */,
+				960AAA231ECE796F00DC5F50 /* ChatHistoryViewModel.swift in Sources */,
 				96A781141ECD37FB00FF2821 /* AccountTableViewController.swift in Sources */,
 				96A7810E1ECD294400FF2821 /* RegisterTableViewController.swift in Sources */,
 				960AAA1F1ECE345A00DC5F50 /* OraChatModels.swift in Sources */,
@@ -415,6 +425,8 @@
 				960AAA151ECD54EA00DC5F50 /* UIColor+Extensions.swift in Sources */,
 				96A7810C1ECD290A00FF2821 /* LoginTableViewController.swift in Sources */,
 				96A781101ECD2C3C00FF2821 /* ChatTableViewController.swift in Sources */,
+				960AAA271ECE904C00DC5F50 /* UIViewControler+Extensions.swift in Sources */,
+				960AAA251ECE8FAA00DC5F50 /* UIAlertController+Extensions.swift in Sources */,
 				960AAA191ECD584700DC5F50 /* OraChatAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
