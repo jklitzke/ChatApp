@@ -225,7 +225,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -261,7 +261,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -296,6 +296,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="1Mo-e8-HNZ" id="ciF-d4-5ZN"/>
+                        <outlet property="passwordTextField" destination="P5A-Nk-F0V" id="HTl-f7-9mj"/>
+                        <outlet property="userEmailTextField" destination="LDv-T0-7sO" id="r1P-qQ-TQE"/>
+                        <outlet property="userNameTextField" destination="eij-IB-S2E" id="PQi-Gr-9C3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vb-FH-ymi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

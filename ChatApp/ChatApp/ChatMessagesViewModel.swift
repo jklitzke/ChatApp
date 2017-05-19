@@ -23,7 +23,6 @@ class ChatMessagesViewModel {
     }
     
     func getChatMessages(success : @escaping GetChatMessagesSuccess, failure: @escaping GetChatMessagesFailure ) {
-        
         guard let chatId = chatId else {
             failure()
             return

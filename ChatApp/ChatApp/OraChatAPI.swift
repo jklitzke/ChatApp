@@ -50,14 +50,14 @@ class OraChatAPI {
             }
     }
     
-    func createUser(_ user : User, success : @escaping CreateUserSuccess, failure : @escaping ApiFailure) {
+    func createUser(_ user : CreateUserRequest, success : @escaping CreateUserSuccess, failure : @escaping ApiFailure) {
         let url = baseURL + createUserOp
         
         let paramaters : Parameters = [
-            "name": user.name ?? "",
-            "email": user.email ?? "",
-            "password" : "something",
-            "password_confirmation" : "something"
+            "name": user.userName,
+            "email": user.email,
+            "password" : user.password,
+            "password_confirmation" : user.confirmPassword
         ]
         
         Alamofire.request(url, method: .post, parameters: paramaters, encoding: JSONEncoding.default, headers: nil)
@@ -67,6 +67,7 @@ class OraChatAPI {
                 switch response.result {
                 case .success:
                     let loginResponse = response.result.value!.data!
+                    self.currentLoggedInUser = loginResponse
                     success(loginResponse)
                 case .failure(let error):
                     failure(error)

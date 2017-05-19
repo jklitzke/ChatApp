@@ -107,3 +107,10 @@ class ChatMessage : Mappable {
         user <- map["user"]
     }
 }
+
+struct CreateUserRequest {
+    var userName : String
+    var email : String
+    var password : String
+    var confirmPassword: String
+}
