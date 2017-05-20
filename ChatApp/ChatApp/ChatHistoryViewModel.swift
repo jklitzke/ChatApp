@@ -11,7 +11,9 @@ import Foundation
 class ChatHistoryViewModel {
     typealias GetChatHistorySuccess = () -> Void
     typealias GetChatHistoryFailure = () -> Void
-    
+    typealias CreateChatSuccess = () -> Void
+    typealias CreateChatFailure = () -> Void
+
     var chatHistory = [ChatSummary]()
     lazy var oraChatApi = OraChatAPI.sharedInstance
 
@@ -19,6 +21,18 @@ class ChatHistoryViewModel {
         oraChatApi.getChatHistory(success: {
             chatHistory in
             self.chatHistory = chatHistory
+            success()
+        }, failure: {
+            error in
+            failure()
+        })
+    }
+
+    
+    func createChat(success : @escaping CreateChatSuccess, failure: @escaping CreateChatFailure ) {
+        oraChatApi.createChat(name: "A chat", message: "A message", success: {
+            chatHistory in
+            self.chatHistory.append(chatHistory)
             success()
         }, failure: {
             error in

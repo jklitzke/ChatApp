@@ -247,12 +247,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nf-Rf-AnD">
+                                <rect key="frame" x="287" y="538" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="YBw-ws-SUa"/>
+                                    <constraint firstAttribute="width" constant="72" id="xeO-GZ-1iv"/>
+                                </constraints>
+                                <state key="normal" image="addChatIcon"/>
+                                <connections>
+                                    <action selector="createChatTapped:" destination="a7L-7B-tFX" eventType="touchUpInside" id="0Tk-4y-44w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="f0x-Hd-Tug" secondAttribute="trailing" id="Hju-CT-Dgo"/>
                             <constraint firstItem="uFJ-ii-Mlw" firstAttribute="leading" secondItem="cM1-QF-6Pc" secondAttribute="leading" id="LSe-Ro-lhS"/>
+                            <constraint firstItem="6nf-Rf-AnD" firstAttribute="trailing" secondItem="cM1-QF-6Pc" secondAttribute="trailingMargin" id="UVz-0h-qyg"/>
                             <constraint firstItem="uFJ-ii-Mlw" firstAttribute="top" secondItem="cM1-QF-6Pc" secondAttribute="top" constant="60" id="W9C-rF-cCK"/>
+                            <constraint firstItem="34v-ie-dv9" firstAttribute="top" secondItem="6nf-Rf-AnD" secondAttribute="bottom" constant="8" id="b93-W1-ViU"/>
                             <constraint firstAttribute="trailing" secondItem="uFJ-ii-Mlw" secondAttribute="trailing" id="hWE-IU-xp9"/>
                             <constraint firstItem="f0x-Hd-Tug" firstAttribute="leading" secondItem="cM1-QF-6Pc" secondAttribute="leading" id="hZw-m5-4vz"/>
                             <constraint firstItem="34v-ie-dv9" firstAttribute="top" secondItem="f0x-Hd-Tug" secondAttribute="bottom" id="ilk-0y-aXd"/>
@@ -273,7 +286,7 @@
         <scene sceneID="k4s-YS-7vg">
             <objects>
                 <tableViewController id="IXn-8d-if6" customClass="ChatTableViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bdr-Rh-RHJ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bdr-Rh-RHJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -282,7 +295,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qad-Z0-Izd" id="1ji-3h-Jnr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyFriendChatMessageBubble" translatesAutoresizingMaskIntoConstraints="NO" id="TIQ-De-MxB">
@@ -327,7 +340,7 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pI0-1h-KnE" id="AG7-1A-Xhi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyChatMessageBubble" translatesAutoresizingMaskIntoConstraints="NO" id="FiJ-gG-CEY">
@@ -367,6 +380,34 @@
                                     <outlet property="messageDetailLabel" destination="kLq-0N-IRp" id="Fmd-1S-nbL"/>
                                     <outlet property="messageLabel" destination="0gm-N2-LpL" id="Oxx-OX-pkG"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newMessageTableViewCell" rowHeight="80" id="vka-Ld-3c0" customClass="NewMessageTableViewCell" customModule="ChatApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="188" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vka-Ld-3c0" id="hSK-tS-O3v">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b67-S9-4bm">
+                                            <rect key="frame" x="295" y="0.0" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="6yb-mV-YQs"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="FZX-CM-syO"/>
+                                                <constraint firstAttribute="height" constant="72" id="sAT-dW-27W"/>
+                                                <constraint firstAttribute="width" constant="72" id="zdT-Ou-vu5"/>
+                                            </constraints>
+                                            <state key="normal" image="addChatIcon"/>
+                                            <connections>
+                                                <action selector="createChatTapped:" destination="a7L-7B-tFX" eventType="touchUpInside" id="EFx-X2-6Fb"/>
+                                                <action selector="newMessageTapped:" destination="vka-Ld-3c0" eventType="touchUpInside" id="SH7-eT-l9Z"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="b67-S9-4bm" secondAttribute="bottom" constant="8" id="5KV-rI-jW7"/>
+                                        <constraint firstAttribute="trailing" secondItem="b67-S9-4bm" secondAttribute="trailing" constant="8" id="bX9-6A-iuP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -419,6 +460,7 @@
         <image name="MyChatMessageBubble" width="226" height="50"/>
         <image name="MyFriendChatMessageBubble" width="226" height="50"/>
         <image name="accountIconUnselected" width="22" height="22"/>
+        <image name="addChatIcon" width="21" height="21"/>
         <image name="chatIconSelected" width="20" height="14"/>
     </resources>
 </document>

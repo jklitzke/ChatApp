@@ -21,8 +21,13 @@ class OraChatAPI {
     
     typealias LoginUserSuccess = (_ user : User) -> Void
     typealias CreateUserSuccess = (_ user : User) -> Void
+    
     typealias ChatHistorySuccess = (_ chatSummaries : [ChatSummary]) -> Void
+    typealias CreateChatSuccess = (_ chatSummary : ChatSummary) -> Void
+    
     typealias ChatMessagesSuccess = (_ chatMessages : [ChatMessage]) -> Void
+    typealias CreateChatMessageSuccess = (_ chatMessage : ChatMessage) -> Void
+    
     typealias ApiFailure = (_ error : Error) -> Void
     
     
@@ -87,6 +92,53 @@ class OraChatAPI {
                 case .success:
                     let chatHistoryResponse = response.result.value!.data!
                     success(chatHistoryResponse)
+                case .failure(let error):
+                    print(error)
+                    failure(error)
+                }
+        }
+    }
+    
+    func createChat(name: String, message : String, success: @escaping CreateChatSuccess, failure : @escaping ApiFailure) {
+        let url = baseURL + chatsOp 
+        
+        let paramaters : Parameters = [
+            "name": name,
+            "message": message,
+        ]
+
+        Alamofire.request(url, method: .post, parameters: paramaters, encoding: JSONEncoding.default, headers: nil)
+            .validate()
+            .responseObject {
+                (response : DataResponse<CreateChatResponse>) in
+                
+                switch response.result {
+                case .success:
+                    let chatHistoryResponse = response.result.value!.data!
+                    success(chatHistoryResponse)
+                case .failure(let error):
+                    print(error)
+                    failure(error)
+                }
+        }
+
+    }
+    
+    func createChatMessage(id : Int, message : String, success : @escaping CreateChatMessageSuccess, failure : @escaping ApiFailure) {
+        let url = baseURL + chatsOp + "/\(id)/chat_messages"
+        
+        let paramaters : Parameters = [
+            "message": message
+            ]
+        Alamofire.request(url, method: .post, parameters: paramaters, encoding: JSONEncoding.default, headers: nil)
+            .validate()
+            .responseObject {
+                (response : DataResponse<CreateChatMessageResponse>) in
+                
+                switch response.result {
+                case .success:
+                    let chatMessage = response.result.value!.data!
+                    success(chatMessage)
                 case .failure(let error):
                     print(error)
                     failure(error)

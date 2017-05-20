@@ -64,6 +64,16 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    @IBAction func createChatTapped(_ sender: Any) {
+        //Need to get message info first!
+        viewModel.createChat(success: {
+            self.chatHistoryTableView.reloadData()
+        }, failure: {
+            self.showGenericErorrMessage()
+        })
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == getChatMessagesSegue {
             if let viewController = segue.destination as? ChatTableViewController,

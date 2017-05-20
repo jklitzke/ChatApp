@@ -12,6 +12,7 @@ class ChatTableViewController: UITableViewController {
 
     let myChatMessageReuseID = "myChatMessageTableViewCell"
     let myFriendChatMessageReuseID = "myFriendChatMessageTableViewCell"
+    let newMessageTableViewCellReuseID = "newMessageTableViewCell"
     
     var viewModel : ChatMessagesViewModel!
     
@@ -35,7 +36,7 @@ class ChatTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfChatMessages
+        return viewModel.numberOfChatMessages + 1
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,6 +44,16 @@ class ChatTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard indexPath.row < viewModel.numberOfChatMessages else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: newMessageTableViewCellReuseID, for: indexPath)
+            
+            if let createMessageCell = cell as? NewMessageTableViewCell {
+                createMessageCell.parentViewController = self
+            }
+            
+            return cell
+        }
+        
         let reuseID = viewModel.isLoggedInUsersMessage(indexPath.row) ? myFriendChatMessageReuseID : myChatMessageReuseID
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath)
 
@@ -51,6 +62,21 @@ class ChatTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    func createNewChat(message : String) {
+        viewModel.createChatMessage("Test chat", success: {
+            self.tableView.reloadData()
+        }, failure: {
+            self.showGenericErorrMessage()
+        })
+    }
+}
+
+class NewMessageTableViewCell : UITableViewCell {
+    weak var parentViewController : ChatTableViewController!
+    @IBAction func newMessageTapped(_ sender: Any) {
+        self.parentViewController.createNewChat(message: "message")
     }
 }
 

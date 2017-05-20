@@ -38,6 +38,34 @@ class ChatHistoryResponse : Mappable {
     }
 }
 
+class CreateChatResponse : Mappable {
+    var data : ChatSummary?
+    var meta : Any?
+    
+    required init?(map : Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        data <- map["data"]
+        meta <- map["meta"]
+    }
+}
+
+class CreateChatMessageResponse : Mappable {
+    var data : ChatMessage?
+    var meta : Any?
+    
+    required init?(map : Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        data <- map["data"]
+        meta <- map["meta"]
+    }
+}
+
 class ChatMessagesResponse : Mappable {
     var data : [ChatMessage]?
     var meta : Any?
