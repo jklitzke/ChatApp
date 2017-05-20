@@ -1,4 +1,4 @@
-f//
+//
 //  ChatMessagesViewModel.swift
 //  ChatApp
 //
@@ -19,7 +19,8 @@ class ChatMessagesViewModel {
     var chatId : Int?
     lazy var oraChatApi = OraChatAPI.sharedInstance
     var currentLoggedInUser : User?
-    
+    let friendlyDateFormatter = DateFormatter.userFrinedlyDateFormatter()
+
     init(id : Int? ) {
         chatId = id
         currentLoggedInUser = oraChatApi.currentLoggedInUser
@@ -72,6 +73,14 @@ class ChatMessagesViewModel {
     }
     
     func detailTextForMessage(_ index : Int) -> String {
-        return chatMessages[index].user?.name ?? ""
+        let userFriendlyDate : String
+        
+        if let date = chatMessages[index].createdAtDate {
+            userFriendlyDate =  friendlyDateFormatter.string(from: date)
+        }
+        else {
+            userFriendlyDate = ""
+        }
+        return "\(chatMessages[index].user?.name ?? "") - \(userFriendlyDate) "
     }
 }

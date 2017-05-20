@@ -16,6 +16,7 @@ class ChatHistoryViewModel {
 
     var chatHistory = [ChatSummary]()
     lazy var oraChatApi = OraChatAPI.sharedInstance
+    let friendlyDateFormatter = DateFormatter.userFrinedlyDateFormatter()
 
     func getChatHistory(success : @escaping GetChatHistorySuccess, failure: @escaping GetChatHistoryFailure ) {
         oraChatApi.getChatHistory(success: {
@@ -61,12 +62,21 @@ class ChatHistoryViewModel {
     
     func lastChatSummaryTextForChat(_ section : Int) -> String {
         let chatSummary = chatHistory[section]
-        let date = chatSummary.last_chat_message?.created_at ?? ""
+        let formattedDate = getFriendlyDateForDate(chatSummary.last_chat_message?.createdAtDate)
+        
         let name = chatSummary.last_chat_message?.user?.name ?? ""
-        return "\(name) - \(date)"
+        return "\(name) - \(formattedDate)"
     }
     
     func dataTextForChat(_ section : Int) -> String {
-        return String(describing: chatHistory[section].last_chat_message?.created_at)
+        return getFriendlyDateForDate(chatHistory[section].last_chat_message?.createdAtDate)
+    }
+    
+    func getFriendlyDateForDate(_ date : Date?) -> String {
+        guard let date = date else {
+            return ""
+        }
+        
+        return friendlyDateFormatter.string(from: date)
     }
 }

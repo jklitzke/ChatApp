@@ -115,6 +115,7 @@ class User : Mappable {
 }
 
 class ChatMessage : Mappable {
+    let isoDateFormatter = DateFormatter.iso8601DateFormatter()
     var id : Int?
     var chat_id : Int?
     var user_id : Int?
@@ -124,6 +125,13 @@ class ChatMessage : Mappable {
     
     required init?(map : Map) {
         
+    }
+    
+    var createdAtDate : Date? {
+        if let created_at = created_at {
+            return self.isoDateFormatter.date(from: created_at)
+        }
+        return nil
     }
     
     func mapping(map: Map) {
