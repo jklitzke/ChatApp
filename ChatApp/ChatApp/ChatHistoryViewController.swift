@@ -17,17 +17,23 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     let getChatMessagesSegue = "getChatMessages"
 
     lazy var viewModel = ChatHistoryViewModel()
+    var activityIndicator : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator = UIActivityIndicatorView.standardActivityIndicatorForView(self.view)
+
         chatHistoryTableView.dataSource = self
         chatHistoryTableView.delegate = self
         chatHistoryTableView.rowHeight = UITableViewAutomaticDimension
         chatHistoryTableView.estimatedRowHeight = 96.0
         
+        activityIndicator.startAnimating()
         viewModel.getChatHistory(success: {
+            self.activityIndicator.stopAnimating()
             self.chatHistoryTableView.reloadData()
         }, failure: {
+            self.activityIndicator.stopAnimating()
             self.showGenericErorrMessage()
         })
     }
@@ -65,14 +71,15 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func createChatTapped(_ sender: Any) {
-        //Need to get message info first!
+        activityIndicator.startAnimating()
         viewModel.createChat(success: {
+            self.activityIndicator.stopAnimating()
             self.chatHistoryTableView.reloadData()
         }, failure: {
+            self.activityIndicator.stopAnimating()
             self.showGenericErorrMessage()
         })
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == getChatMessagesSegue {

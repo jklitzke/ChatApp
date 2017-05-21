@@ -15,13 +15,19 @@ class ChatTableViewController: UITableViewController {
     let newMessageTableViewCellReuseID = "newMessageTableViewCell"
     
     var viewModel : ChatMessagesViewModel!
+    var activityIndicator : UIActivityIndicatorView!
     
     override func viewDidLoad() {
+        activityIndicator = UIActivityIndicatorView.standardActivityIndicatorForView(self.view)
+
         super.viewDidLoad()
         
+        activityIndicator.startAnimating()
         viewModel.getChatMessages(success: {
+            self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }, failure: {
+            self.activityIndicator.stopAnimating()
             self.showGenericErorrMessage()
         })
     }
@@ -65,9 +71,12 @@ class ChatTableViewController: UITableViewController {
     }
     
     func createNewChat(message : String) {
+        activityIndicator.startAnimating()
         viewModel.createChatMessage("Test chat", success: {
+            self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }, failure: {
+            self.activityIndicator.stopAnimating()
             self.showGenericErorrMessage()
         })
     }

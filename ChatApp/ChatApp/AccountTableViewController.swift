@@ -17,9 +17,11 @@ class AccountTableViewController: UITableViewController {
 
     lazy var createUserViewModel = CreateUserViewModel()
     lazy var loggedInUserViewModel = LoggedInUserViewModel()
+    var activityIndicator : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator = UIActivityIndicatorView.standardActivityIndicatorForView(self.view)
         userNameTextField.text = loggedInUserViewModel.name
         userEmailTextField.text = loggedInUserViewModel.email
     }
@@ -59,9 +61,12 @@ class AccountTableViewController: UITableViewController {
             return
         }
         
+        activityIndicator.startAnimating()
         createUserViewModel.createUser(user: request, success: {
+            self.activityIndicator.stopAnimating()
             self.showAlertWithTitle("Account Info Updated", message: "Account Info Was Updated Successfully!")
         }, failure: {
+            self.activityIndicator.stopAnimating()
             self.showGenericErorrMessage()
         })
     }

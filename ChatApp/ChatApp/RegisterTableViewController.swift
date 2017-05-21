@@ -16,8 +16,13 @@ class RegisterTableViewController: UITableViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     let chatStoryBoard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
-
     lazy var viewModel = CreateUserViewModel()
+    var activityIndicator : UIActivityIndicatorView!
+    
+    override func viewDidLoad() {
+        activityIndicator = UIActivityIndicatorView.standardActivityIndicatorForView(self.view)
+        super.viewDidLoad()
+    }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
@@ -46,14 +51,16 @@ class RegisterTableViewController: UITableViewController {
             self.showAlertWithTitle("Passwords do not match!", message: "Password and repeat password fields do not match.")
             return
         }
-        
+        activityIndicator.startAnimating()
         viewModel.createUser(user: request, success: {
+            self.activityIndicator.stopAnimating()
             guard let initialViewControler = self.chatStoryBoard.instantiateInitialViewController() else {
                 return
             }
             
             self.navigationController?.present(initialViewControler, animated: true)
         }, failure: {
+            self.activityIndicator.stopAnimating()
             self.showGenericErorrMessage()
         })
     }

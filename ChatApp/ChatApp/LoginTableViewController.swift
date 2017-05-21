@@ -14,6 +14,12 @@ class LoginTableViewController : UITableViewController {
     
     let chatStoryBoard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
     lazy var viewModel = LoggedInUserViewModel()
+    var activityIndicator : UIActivityIndicatorView!
+    
+    override func viewDidLoad() {
+        activityIndicator = UIActivityIndicatorView.standardActivityIndicatorForView(self.view)
+        super.viewDidLoad()
+    }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, viewModel.isValidEmail(email) else {
@@ -26,13 +32,16 @@ class LoginTableViewController : UITableViewController {
             return
         }
         
+        activityIndicator.startAnimating()
         viewModel.fetchUserWith(email: email, password: password, successClosure: {
+            self.activityIndicator.stopAnimating()
             guard let initialViewControler = self.chatStoryBoard.instantiateInitialViewController() else {
                 return
             }
             
             self.navigationController?.present(initialViewControler, animated: true)
         }, failureClosure: {
+            self.activityIndicator.stopAnimating()
             print("failure!")
             self.loginServiceFailedAlert()
         })
