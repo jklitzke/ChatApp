@@ -63,7 +63,6 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = chatHistoryTableView.dequeueReusableCell(withIdentifier: reuseID)!
         
         if let chatCell = cell as? ChatHistoryTableViewCell {
-
             chatCell.configureFor(viewModel: viewModel, indexPath: indexPath)
         }
         
@@ -103,7 +102,6 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.present(alertController, animated: true, completion: nil)
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == getChatMessagesSegue {

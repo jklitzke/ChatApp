@@ -86,6 +86,10 @@ class ChatSummary : Mappable {
     var users : [User]?
     var last_chat_message : ChatMessage?
     
+    init() {
+    
+    }
+    
     required init?(map : Map) {
         
     }
@@ -102,6 +106,10 @@ class User : Mappable {
     var userID : Int?
     var email : String?
     var name : String?
+    
+    init() {
+        
+    }
     
     required init?(map : Map) {
         
@@ -122,6 +130,10 @@ class ChatMessage : Mappable {
     var message : String?
     var created_at : String?
     var user : User?
+    
+    init() {
+        
+    }
     
     required init?(map : Map) {
         

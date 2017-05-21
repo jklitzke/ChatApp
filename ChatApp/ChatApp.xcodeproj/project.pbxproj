@@ -19,11 +19,12 @@
 		960AAA2B1ECF4A5B00DC5F50 /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA2A1ECF4A5B00DC5F50 /* CreateUserViewModel.swift */; };
 		960AAA2D1ED1079200DC5F50 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA2C1ED1079200DC5F50 /* DateFormatter+Extensions.swift */; };
 		960AAA2F1ED10E9000DC5F50 /* UIActivityIndicatorView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA2E1ED10E9000DC5F50 /* UIActivityIndicatorView+Extensions.swift */; };
+		960AAA311ED12AB700DC5F50 /* ChatHistoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA301ED12AB700DC5F50 /* ChatHistoryViewModelTests.swift */; };
+		960AAA331ED12EFD00DC5F50 /* ChatHistoryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AAA321ED12EFD00DC5F50 /* ChatHistoryViewControllerTests.swift */; };
 		96939CF11ECCEAB6004A42F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96939CF01ECCEAB6004A42F9 /* AppDelegate.swift */; };
 		96939CF81ECCEAB6004A42F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96939CF61ECCEAB6004A42F9 /* Main.storyboard */; };
 		96939CFA1ECCEAB6004A42F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96939CF91ECCEAB6004A42F9 /* Assets.xcassets */; };
 		96939CFD1ECCEAB6004A42F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96939CFB1ECCEAB6004A42F9 /* LaunchScreen.storyboard */; };
-		96939D081ECCEAB6004A42F9 /* ChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96939D071ECCEAB6004A42F9 /* ChatAppTests.swift */; };
 		96A781071ECD22C600FF2821 /* ChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A781061ECD22C600FF2821 /* ChatStoryboard.storyboard */; };
 		96A7810C1ECD290A00FF2821 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7810B1ECD290A00FF2821 /* LoginTableViewController.swift */; };
 		96A7810E1ECD294400FF2821 /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7810D1ECD294400FF2821 /* RegisterTableViewController.swift */; };
@@ -58,6 +59,8 @@
 		960AAA2A1ECF4A5B00DC5F50 /* CreateUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
 		960AAA2C1ED1079200DC5F50 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		960AAA2E1ED10E9000DC5F50 /* UIActivityIndicatorView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extensions.swift"; sourceTree = "<group>"; };
+		960AAA301ED12AB700DC5F50 /* ChatHistoryViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatHistoryViewModelTests.swift; sourceTree = "<group>"; };
+		960AAA321ED12EFD00DC5F50 /* ChatHistoryViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatHistoryViewControllerTests.swift; sourceTree = "<group>"; };
 		96939CED1ECCEAB6004A42F9 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96939CF01ECCEAB6004A42F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96939CF71ECCEAB6004A42F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		96939CFC1ECCEAB6004A42F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96939CFE1ECCEAB6004A42F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96939D031ECCEAB6004A42F9 /* ChatAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		96939D071ECCEAB6004A42F9 /* ChatAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppTests.swift; sourceTree = "<group>"; };
 		96939D091ECCEAB6004A42F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96A781061ECD22C600FF2821 /* ChatStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatStoryboard.storyboard; sourceTree = "<group>"; };
 		96A7810B1ECD290A00FF2821 /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
@@ -174,8 +176,9 @@
 		96939D061ECCEAB6004A42F9 /* ChatAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				96939D071ECCEAB6004A42F9 /* ChatAppTests.swift */,
 				96939D091ECCEAB6004A42F9 /* Info.plist */,
+				960AAA301ED12AB700DC5F50 /* ChatHistoryViewModelTests.swift */,
+				960AAA321ED12EFD00DC5F50 /* ChatHistoryViewControllerTests.swift */,
 			);
 			path = ChatAppTests;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 					};
 					96939D021ECCEAB6004A42F9 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 96939CEC1ECCEAB6004A42F9;
 					};
@@ -451,7 +455,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96939D081ECCEAB6004A42F9 /* ChatAppTests.swift in Sources */,
+				960AAA311ED12AB700DC5F50 /* ChatHistoryViewModelTests.swift in Sources */,
+				960AAA331ED12EFD00DC5F50 /* ChatHistoryViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,10 +615,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ChatAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klitzke.inc.ChatAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatApp.app/ChatApp";
 			};
@@ -625,6 +632,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ChatAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klitzke.inc.ChatAppTests;
