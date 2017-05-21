@@ -28,7 +28,6 @@ class ChatHistoryViewModel {
             failure()
         })
     }
-
     
     func createChat(name: String, message : String, success : @escaping CreateChatSuccess, failure: @escaping CreateChatFailure ) {
         oraChatApi.createChat(name: name, message: message, success: {

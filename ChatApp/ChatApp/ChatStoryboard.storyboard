@@ -188,7 +188,7 @@
         <!--Chat-->
         <scene sceneID="Dfl-PL-Wnc">
             <objects>
-                <viewController id="a7L-7B-tFX" customClass="ChatHistoryViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatHistoryViewController" id="a7L-7B-tFX" customClass="ChatHistoryViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vVe-9p-LX4"/>
                         <viewControllerLayoutGuide type="bottom" id="34v-ie-dv9"/>
