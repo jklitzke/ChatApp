@@ -70,6 +70,25 @@ class ChatTableViewController: UITableViewController {
         return cell
     }
     
+    func newChatMessageAlertModal() {
+        let alertController = UIAlertController(title: "New Message", message: "What do you want to say?", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Send", style: .default) { (_) in
+            self.createNewChat(message: alertController.textFields![0].text ?? "")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "Message"
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func createNewChat(message : String) {
         activityIndicator.startAnimating()
         viewModel.createChatMessage("Test chat", success: {
@@ -85,7 +104,8 @@ class ChatTableViewController: UITableViewController {
 class NewMessageTableViewCell : UITableViewCell {
     weak var parentViewController : ChatTableViewController!
     @IBAction func newMessageTapped(_ sender: Any) {
-        self.parentViewController.createNewChat(message: "message")
+        
+        self.parentViewController.newChatMessageAlertModal()
     }
 }
 

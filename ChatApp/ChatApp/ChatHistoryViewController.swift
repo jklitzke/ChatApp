@@ -71,15 +71,39 @@ class ChatHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func createChatTapped(_ sender: Any) {
-        activityIndicator.startAnimating()
-        viewModel.createChat(success: {
-            self.activityIndicator.stopAnimating()
-            self.chatHistoryTableView.reloadData()
-        }, failure: {
-            self.activityIndicator.stopAnimating()
-            self.showGenericErorrMessage()
-        })
+        let alertController = UIAlertController(title: "New Chat", message: "What do you want to say?", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Send", style: .default) { (_) in
+            self.activityIndicator.startAnimating()
+            let name = alertController.textFields![0].text ?? ""
+            let message = alertController.textFields![1].text ?? ""
+            
+            self.viewModel.createChat(name: name, message: message, success: {
+                self.activityIndicator.stopAnimating()
+                self.chatHistoryTableView.reloadData()
+            }, failure: {
+                self.activityIndicator.stopAnimating()
+                self.showGenericErorrMessage()
+            })
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "Name"
+        }
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "Message"
+        }
+
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == getChatMessagesSegue {

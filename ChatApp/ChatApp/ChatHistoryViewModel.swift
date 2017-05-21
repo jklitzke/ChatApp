@@ -30,8 +30,8 @@ class ChatHistoryViewModel {
     }
 
     
-    func createChat(success : @escaping CreateChatSuccess, failure: @escaping CreateChatFailure ) {
-        oraChatApi.createChat(name: "A chat", message: "A message", success: {
+    func createChat(name: String, message : String, success : @escaping CreateChatSuccess, failure: @escaping CreateChatFailure ) {
+        oraChatApi.createChat(name: name, message: message, success: {
             chatHistory in
             self.chatHistory.append(chatHistory)
             success()
